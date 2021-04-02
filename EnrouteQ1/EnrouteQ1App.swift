@@ -13,7 +13,7 @@ struct EnrouteQ1App: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FlightsEnrouteView(flightSearch: FlightSearch(destination: "KSFO"))
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
