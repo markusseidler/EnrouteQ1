@@ -67,8 +67,10 @@ class FlightAwareRequest<Fetched> where Fetched: Codable, Fetched: Hashable
     func fetch(andRepeatEvery interval: TimeInterval, useCache: Bool? = nil) {
         fetchInterval = interval
         if useCache != nil {
+            print("fetch use Cache")
             fetch(useCache: useCache!)
         } else {
+            print("fetch use no Cache")
             fetch()
         }
     }

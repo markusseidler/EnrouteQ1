@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2810969D2618477E001608BA /* Airport+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2810969C2618477E001608BA /* Airport+Extension.swift */; };
+		281096A026186A7A001608BA /* Airline+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2810969F26186A7A001608BA /* Airline+Extension.swift */; };
+		281096A3261871B3001608BA /* Flight+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281096A2261871B3001608BA /* Flight+Extension.swift */; };
+		281096A7261885BB001608BA /* log.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 281096A6261885BB001608BA /* log.rtf */; };
 		28F4DBE226173C86007B2FB6 /* EnrouteQ1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F4DBE126173C86007B2FB6 /* EnrouteQ1App.swift */; };
 		28F4DBE426173C86007B2FB6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F4DBE326173C86007B2FB6 /* ContentView.swift */; };
 		28F4DBE626173C87007B2FB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28F4DBE526173C87007B2FB6 /* Assets.xcassets */; };
@@ -28,6 +32,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2810969C2618477E001608BA /* Airport+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Airport+Extension.swift"; sourceTree = "<group>"; };
+		2810969F26186A7A001608BA /* Airline+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Airline+Extension.swift"; sourceTree = "<group>"; };
+		281096A2261871B3001608BA /* Flight+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flight+Extension.swift"; sourceTree = "<group>"; };
+		281096A6261885BB001608BA /* log.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = log.rtf; sourceTree = "<group>"; };
 		28F4DBDE26173C86007B2FB6 /* EnrouteQ1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnrouteQ1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28F4DBE126173C86007B2FB6 /* EnrouteQ1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrouteQ1App.swift; sourceTree = "<group>"; };
 		28F4DBE326173C86007B2FB6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +69,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2810969626184761001608BA /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				2810969C2618477E001608BA /* Airport+Extension.swift */,
+				2810969F26186A7A001608BA /* Airline+Extension.swift */,
+				281096A2261871B3001608BA /* Flight+Extension.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		28F4DBD526173C86007B2FB6 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +98,7 @@
 		28F4DBE026173C86007B2FB6 /* EnrouteQ1 */ = {
 			isa = PBXGroup;
 			children = (
+				2810969626184761001608BA /* CoreData */,
 				28F4DC0F26173CAE007B2FB6 /* FoundationExtensions.swift */,
 				28F4DC0626173CA7007B2FB6 /* Airlines.swift */,
 				28F4DC0426173CA7007B2FB6 /* Airports.swift */,
@@ -94,6 +113,7 @@
 				28F4DBEF26173C87007B2FB6 /* Info.plist */,
 				28F4DBEC26173C87007B2FB6 /* EnrouteQ1.xcdatamodeld */,
 				28F4DBE726173C87007B2FB6 /* Preview Content */,
+				281096A6261885BB001608BA /* log.rtf */,
 			);
 			path = EnrouteQ1;
 			sourceTree = "<group>";
@@ -176,6 +196,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				281096A7261885BB001608BA /* log.rtf in Resources */,
 				28F4DBE926173C87007B2FB6 /* Preview Assets.xcassets in Resources */,
 				28F4DBE626173C87007B2FB6 /* Assets.xcassets in Resources */,
 			);
@@ -196,9 +217,12 @@
 				28F4DC0026173C99007B2FB6 /* FlightAware+AirlineInfo.swift in Sources */,
 				28F4DC0B26173CA8007B2FB6 /* Airlines.swift in Sources */,
 				28F4DBE426173C86007B2FB6 /* ContentView.swift in Sources */,
+				281096A026186A7A001608BA /* Airline+Extension.swift in Sources */,
+				281096A3261871B3001608BA /* Flight+Extension.swift in Sources */,
 				28F4DBFF26173C99007B2FB6 /* FlightSimulationData.swift in Sources */,
 				28F4DBEE26173C87007B2FB6 /* EnrouteQ1.xcdatamodeld in Sources */,
 				28F4DC0C26173CA8007B2FB6 /* FlightsEnrouteView.swift in Sources */,
+				2810969D2618477E001608BA /* Airport+Extension.swift in Sources */,
 				28F4DC0126173C99007B2FB6 /* FlightAware+Enroute.swift in Sources */,
 				28F4DC1026173CAE007B2FB6 /* FoundationExtensions.swift in Sources */,
 				28F4DBFD26173C99007B2FB6 /* FlightAware+AirportInfo.swift in Sources */,
