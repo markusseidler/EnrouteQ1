@@ -17,7 +17,7 @@ struct EnrouteQ1App: App {
     }
     
     var body: some Scene {
-        let airport = Airport.withICAO("KSOF", context: context)
+        let airport = Airport.withICAO("KSFO", context: context)
         WindowGroup {
             FlightsEnrouteView(flightSearch: FlightSearch(destination: airport))
                 .environment(\.managedObjectContext, context)

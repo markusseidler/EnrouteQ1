@@ -101,6 +101,7 @@ class FlightAwareRequest<Fetched> where Fetched: Codable, Fetched: Hashable
                     .sink { [weak self] results in self?.handleResults(results) }
             }
             else {
+                print(query)
                 if let json = flightSimulationData[query]?.data(using: .utf8) {
                     print("simulating \(query)")
                     handleResults(decode(json), isCacheable: false)
