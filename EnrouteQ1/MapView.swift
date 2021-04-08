@@ -12,6 +12,7 @@ import MapKit
 struct MapView: UIViewRepresentable {
     
     let annotations: [MKAnnotation]
+    @Binding var selection: MKAnnotation?
     
     func makeUIView(context: Context) -> MKMapView {
         let mkMapView = MKMapView()
@@ -24,22 +25,37 @@ struct MapView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
-        
+        if let annotation = selection {
+            let town = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+            uiView.setRegion(MKCoordinateRegion(center: annotation.coordinate, span: town), animated: true)
+        }
     }
     
     typealias UIViewType = MKMapView
     
     func makeCoordinator() -> Coordinator {
-        Coordinator()
+        Coordinator(selection: $selection)
     }
     
     class Coordinator: NSObject, MKMapViewDelegate {
         
+        @Binding var selection: MKAnnotation?
+        
+        init(selection: Binding<MKAnnotation?>) {
+            self._selection = selection
+        }
+        
         func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-            let view = mapView.dequeueReusableAnnotationView(withIdentifier: "MapViewAnnotation") ?? MKPinAnnotationView(annotation: annotation, reuseIdentifier: "MapViewAnnotation ")
+            let view = mapView.dequeueReusableAnnotationView(withIdentifier: "MapViewAnnotation") ?? MKPinAnnotationView(annotation: annotation,  reuseIdentifier: "MapViewAnnotation ")
             view.canShowCallout = true
             
             return view
+        }
+        
+        func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+            if let annotation = view.annotation  {
+                selection = annotation 
+            }
         }
     }
 }

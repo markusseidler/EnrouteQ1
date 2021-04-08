@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import MapKit
  
 struct FilterFlights: View {
 //    @ObservedObject var allAirports = Airports.all
@@ -27,6 +28,16 @@ struct FilterFlights: View {
         _draft = State(wrappedValue: flightSearch.wrappedValue)
     }
     
+    var destination: Binding<MKAnnotation?> {
+        return Binding<MKAnnotation?>(
+            get: { return draft.destination },
+            set: { (annotation) in
+                if let airport = annotation as? Airport {
+                    draft.destination = airport
+                }
+         })
+    }
+    
     var body: some View {
         NavigationView {
             Form {
@@ -37,7 +48,7 @@ struct FilterFlights: View {
                         }
                     }
                     
-                    MapView(annotations: airports.sorted())
+                    MapView(annotations: airports.sorted(), selection: destination)
                         .frame(minHeight: 400)
                 }
                 
